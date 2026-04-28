@@ -23,7 +23,7 @@ export default function CardFruitsAndVegetables() {
                             <div className='text-3xl font-bold'>40% OFF</div>
                             <div className='text-sm text-white/70'>Use code: <span className='font-bold text-white'>ORGANIC40</span></div>
                         </div>
-                    <Link href='/' className='inline-flex items-center gap-2 bg-white text-emerald-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors'>
+                    <Link href='/shop' className='inline-flex items-center gap-2 bg-white text-emerald-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors'>
                         Shop Now
                         <FaArrowRightLong />
                     </Link>
@@ -46,7 +46,7 @@ export default function CardFruitsAndVegetables() {
                             <div className='text-3xl font-bold'>25% OFF</div>
                             <div className='text-sm text-white/70'>Use code: <span className='font-bold text-white'>FRESH25</span></div>
                         </div>
-                    <Link href='/' className='inline-flex items-center gap-2 bg-white text-orange-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors'>
+                    <Link href='/shop' className='inline-flex items-center gap-2 bg-white text-orange-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors'>
                         Shop Now
                         <FaArrowRightLong />
                     </Link>

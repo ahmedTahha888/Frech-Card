@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { FaFilter, FaFolderOpen } from 'react-icons/fa6'
 import { HiMiniXMark } from 'react-icons/hi2'
 import EmptySpecificBrand from '../EmptySpecificBrand/EmptySpecificBrand'

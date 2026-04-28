@@ -9,6 +9,7 @@ import Providers from "./_components/Tanstackproviders/providers";
 import CardContextProvider from "./_context/CardContextProvider";
 import { getUserCart } from "./_actions/Card.actions";
 import { getUserWishlist } from "./_actions/wishlist.action";
+import CategoriesDropdown from "./_components/CategoriesDropdown/CategoriesDropdown";
 
 
 const exo = Exo({
@@ -43,7 +44,7 @@ export default async function RootLayout({
           <CardContextProvider userData={userData} userWishlist = {userWishlist}>
 
             <Providers>
-              <Navbar />
+              <Navbar categoriesDropdown={<CategoriesDropdown />} />
               <Toaster />
               {children}
               <Footer />

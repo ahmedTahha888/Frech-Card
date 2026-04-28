@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/images/FreshCartLogo.png";
@@ -18,19 +18,14 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { BiUser } from "react-icons/bi";
 import { signOut, useSession } from "next-auth/react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { cardContext } from "@/app/_context/CardContextProvider";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
-
-export default function Navbar() {
+interface NavbarProps {
+  categoriesDropdown: React.ReactNode
+}
+export default  function Navbar({ categoriesDropdown } : NavbarProps) {
   const { numberOfCardItem, numberOfWishlistItem } = useContext(cardContext);
 
   const session = useSession();
@@ -39,6 +34,7 @@ export default function Navbar() {
   function handleLogOut() {
     signOut({ redirect: true, callbackUrl: "/login" });
   }
+
 
   return (
     <>
@@ -77,13 +73,13 @@ export default function Navbar() {
 
           {session.data ? (
             <>
-              <Link
+              {/* <Link
                 href="/profile"
                 className="text-[#4A5565] text-sm hover:text-global flex gap-2 items-center"
               >
                 <BiUser />
                 medo
-              </Link>
+              </Link> */}
               <button
                 onClick={handleLogOut}
                 className="text-[#4A5565] text-sm hover:text-red-500 flex gap-2 items-center"
@@ -151,25 +147,9 @@ export default function Navbar() {
             </Link>
 
             {/* Categories Dropdown */}
-            <NavigationMenu>
-              <NavigationMenuItem className="list-none">
-                <NavigationMenuTrigger className="text-[#364153] font-medium text-base focus:bg-transparent hover:bg-transparent hover:text-global flex">
-                  Categories
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="w-50">
-                    <ListItem
-                      href="/categories"
-                      title="All Categories"
-                    ></ListItem>
-                    <ListItem href="/shop" title="Electronics"></ListItem>
-                    <ListItem href="/shop" title="Women's Fashion"></ListItem>
-                    <ListItem href="/shop" title="Men's Fashion"></ListItem>
-                    <ListItem href="/shop" title="Beauty & Health"></ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenu>
+          
+              {categoriesDropdown}
+
 
             <Link className="hover:text-global" href="/brands">
               Brands
@@ -417,22 +397,4 @@ export default function Navbar() {
   );
 }
 
-function ListItem({
-  title,
-  children,
-  href,
-  ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-  return (
-    <li {...props}>
-      <NavigationMenuLink asChild>
-        <Link href={href}>
-          <div className="flex flex-col gap-1 text-base">
-            <div className="block px-4 transition-colors">{title}</div>
-            <div className="line-clamp-2  text-gray-400 ">{children}</div>
-          </div>
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  );
-}
+

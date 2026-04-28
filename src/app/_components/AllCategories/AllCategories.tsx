@@ -2,7 +2,6 @@ import { getAllCategory } from '@/app/_actions/Category.action'
 import { Category } from '@/Types/category.type'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
 
 export default async function AllCategories() {
