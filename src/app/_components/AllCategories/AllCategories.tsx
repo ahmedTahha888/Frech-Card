@@ -1,0 +1,34 @@
+import { getAllCategory } from '@/app/_actions/Category.action'
+import { Category } from '@/Types/category.type'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import { FaArrowRightLong } from 'react-icons/fa6'
+
+export default async function AllCategories() {
+
+    const Category = await getAllCategory();
+  return (
+    <div className='px-4 py-10'>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6'>
+
+                {Category?.map(  (item : Category)=><>
+                    <Link key={item._id} href={`/SubCategory/${item._id}`}  className='group bg-white rounded-2xl border border-gray-100 p-4 sm:p-6 shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1'>
+                    <div className='aspect-square rounded-xl overflow-hidden bg-gray-50 mb-4'>
+                        <Image src={item.image} width={229} height={229} className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-500' alt={item.name}/>
+                    </div>
+                    <h3 className='font-bold text-gray-900 text-center group-hover:text-primary-600 transition-colors'>{item.name}</h3>
+                    <div className='flex justify-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity'>
+                        <span className='text-xs text-global flex items-center gap-1'>
+                            View Subcategories
+                            <FaArrowRightLong className='text-xs' />
+                        </span>
+                    </div>
+                </Link>
+                
+                </>  )}
+                
+            </div>
+        </div>
+  )
+}
