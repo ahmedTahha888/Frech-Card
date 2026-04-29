@@ -1,6 +1,6 @@
 "use client";
 
-import {  useContext } from "react";
+import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/images/FreshCartLogo.png";
@@ -23,18 +23,16 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 interface NavbarProps {
-  categoriesDropdown: React.ReactNode
+  categoriesDropdown: React.ReactNode;
 }
-export default  function Navbar({ categoriesDropdown } : NavbarProps) {
+export default function Navbar({ categoriesDropdown }: NavbarProps) {
   const { numberOfCardItem, numberOfWishlistItem } = useContext(cardContext);
 
   const session = useSession();
 
-
   function handleLogOut() {
     signOut({ redirect: true, callbackUrl: "/login" });
   }
-
 
   return (
     <>
@@ -147,9 +145,8 @@ export default  function Navbar({ categoriesDropdown } : NavbarProps) {
             </Link>
 
             {/* Categories Dropdown */}
-          
-              {categoriesDropdown}
 
+            {categoriesDropdown}
 
             <Link className="hover:text-global" href="/brands">
               Brands
@@ -231,7 +228,7 @@ export default  function Navbar({ categoriesDropdown } : NavbarProps) {
                   className="flex lg:hidden w-10 h-10 items-center justify-center text-white bg-global hover:bg-green-700 rounded-full transition-colors text-2xl ml-1"
                   aria-label="Toggle menu"
                 >
-                  <IoMenu  />
+                  <IoMenu />
                 </button>
               </SheetTrigger>
 
@@ -297,7 +294,8 @@ export default  function Navbar({ categoriesDropdown } : NavbarProps) {
                   <div className="border-t border-gray-100 pt-4 flex flex-col gap-2">
                     <Link
                       href="/wishlist"
-                      className="flex items-center justify-between py-2.5 px-4 text-[#364153] hover:bg-red-50 rounded-lg hover:text-red-500 transition-colors">
+                      className="flex items-center justify-between py-2.5 px-4 text-[#364153] hover:bg-red-50 rounded-lg hover:text-red-500 transition-colors"
+                    >
                       <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center">
                           <LuHeart className="text-red-400 text-lg" />
@@ -344,7 +342,8 @@ export default  function Navbar({ categoriesDropdown } : NavbarProps) {
                         </Link>
                         <button
                           onClick={handleLogOut}
-                          className="flex items-center gap-3 py-2.5 px-4 text-[#364153] hover:bg-red-50 rounded-lg hover:text-red-500 transition-colors cursor-pointer">
+                          className="flex items-center gap-3 py-2.5 px-4 text-[#364153] hover:bg-red-50 rounded-lg hover:text-red-500 transition-colors cursor-pointer"
+                        >
                           <div className="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center">
                             <FaRightFromBracket className="text-red-400 text-lg" />
                           </div>
@@ -383,7 +382,6 @@ export default  function Navbar({ categoriesDropdown } : NavbarProps) {
                         <p className="text-xs text-global">Contact Support</p>
                       </div>
                     </div>
-                    
                   </div>
                 </div>
               </SheetContent>
@@ -396,5 +394,3 @@ export default  function Navbar({ categoriesDropdown } : NavbarProps) {
     </>
   );
 }
-
-
