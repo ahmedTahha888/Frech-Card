@@ -12,6 +12,7 @@ import { ProductType } from "@/Types/product.types";
 import { cardContext } from "@/app/_context/CardContextProvider";
 import { AddProductToCard } from "@/app/_actions/Card.actions";
 import BtnAddToWishlist from "../BtnAddToWishlist/BtnAddToWishlist";
+import { toast } from "sonner";
 
 export default function DetailsProduct({ product }: { product: ProductType }) {
   const { cartProduct, setCartProduct, setNumberOfCardItem, setTotalPrice } =
@@ -48,6 +49,7 @@ export default function DetailsProduct({ product }: { product: ProductType }) {
       setCartProduct(res.data.products);
       setNumberOfCardItem(res.numOfCartItems);
       setTotalPrice(res.data.totalCartPrice);
+      toast.success(res.message, { position: "top-center", richColors: true });
     }
     setIsLoading(false);
   };

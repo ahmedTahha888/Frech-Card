@@ -41,7 +41,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 export default function FormAboutPayment() {
-  const router =  useRouter()
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const {
     cartId,
@@ -50,6 +50,8 @@ export default function FormAboutPayment() {
     cartProduct,
     setTotalPrice,
     setCartProduct,
+    setNumberOfWishlistItem,
+    setNumberOfCardItem,
   } = useContext(cardContext);
 
   const { control, handleSubmit } = useForm<CheckoutType>({
@@ -84,6 +86,8 @@ export default function FormAboutPayment() {
         setCartId(res.cartId);
         setCartProduct([]);
         setTotalPrice(0);
+        setNumberOfCardItem(0);
+        setNumberOfWishlistItem(0);
         router.push("/shop");
         console.log("res to order");
 
@@ -107,6 +111,8 @@ export default function FormAboutPayment() {
         setCartId(res.cartId);
         setCartProduct([]);
         setTotalPrice(0);
+        setNumberOfCardItem(0);
+        setNumberOfWishlistItem(0);
 
         toast.success("Order placed successfully! 🎉", {
           position: "top-center",
