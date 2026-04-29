@@ -1,6 +1,6 @@
 import { getAllCategory } from "@/app/_actions/Category.action";
+import { Category } from "@/Types/category.type";
 import Link from "next/link";
-import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default async function CategoryHome() {
@@ -15,7 +15,7 @@ export default async function CategoryHome() {
             <span className="text-global ms-2 ">Category</span>
           </h3>
         </div>
-        <div className="me-6 text-global hover:text-green-700 ">
+        <div className="me-6 self-end mt-2.5 md:mt-0 text-global hover:text-green-700 ">
           <Link className="flex items-center gap-2" href="/shop">
             {" "}
             View All Categories <FaArrowRightLong />
@@ -24,9 +24,11 @@ export default async function CategoryHome() {
       </div>
 
       <div>
+        
         <div className=" grid grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-5 px-8 m-auto py-8 ">
-          {Category?.map((item) => (
-            <div
+          {Category?.map((item :Category) => (
+            <Link
+            href={`/SubCategory/${item._id}`}
               key={item._id}
               className="bg-white shadow-sm  hover:shadow-md transition-shadow duration-300  p-4 rounded-lg"
             >
@@ -38,7 +40,7 @@ export default async function CategoryHome() {
               <h3 className="font-medium text-base text-center pt-3">
                 {item.name}
               </h3>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

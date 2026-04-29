@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useContext } from "react";
+import {  useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/images/FreshCartLogo.png";

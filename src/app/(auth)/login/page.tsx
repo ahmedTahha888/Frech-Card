@@ -43,7 +43,6 @@ export default function LOgin() {
       const responseLogin = await signIn("credentials", {
         ...values,
         redirect: false,
-        
       });
       console.log(responseLogin);
 
@@ -55,17 +54,13 @@ export default function LOgin() {
         setTimeout(() => {
           router.push("/");
         }, 900);
-      }
-    } catch (err) {
-      console.log(err);
-      toast.error(
-        "Registration failed. Please check your details and try again.",
-        {
+      } else if (responseLogin?.error) {
+        toast.error("Invalid Email or Password, Please try again!", {
           position: "top-center",
           richColors: true,
-        },
-      );
-    } finally {
+        });
+      }
+    }  finally {
       setIsLoading(false);
     }
   }

@@ -13,7 +13,7 @@ export async function createCashOrder( cartId : string , shippingAddress : shipp
     const token = await getMyToken()
 
     const res = await fetch(`https://ecommerce.routemisr.com/api/v2/orders/${cartId}` , {
-        cache: "force-cache",
+        cache: "no-store",
         headers:{
             token :token as string,
             "Content-Type" : "application/json"
@@ -31,11 +31,12 @@ export async function createCashOrder( cartId : string , shippingAddress : shipp
 
 // ============================Online Or Visa Order======================================================
 export async function createVisaOrder( cartId : string , shippingAddress : shippingAddressType ){
+  const baseUrl = process.env.NEXTAUTH_URL_PRODUCTION ?? process.env.NEXTAUTH_URL;
 
     const token = await getMyToken()
 
-    const res = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:3000` , {
-        cache: "force-cache",
+    const res = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${baseUrl}` , {
+        cache: "no-store",
         headers:{
             token :token as string,
             "Content-Type" : "application/json"

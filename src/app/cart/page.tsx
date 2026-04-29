@@ -129,9 +129,9 @@ export default function CardData() {
                       </div>
                     )}
                     <div className="p-4 sm:p-5">
-                      <div className="flex gap-4 sm:gap-6">
+                      <div className="flex-wrap md:flex gap-4 sm:gap-6">
                         <Link href="/" className="relative shrink-0 group">
-                          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-gray-100 p-3 border border-gray-100 overflow-hidden">
+                          <div className="w-full h-29 sm:w-32 sm:h-32 rounded-xl bg-gray-100 p-3 border border-gray-100 overflow-hidden">
                             <Image
                               width={102}
                               height={102}

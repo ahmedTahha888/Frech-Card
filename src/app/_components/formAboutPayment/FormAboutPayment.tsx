@@ -38,8 +38,10 @@ import { CardItemType } from "@/Types/card.type";
 import StaticPayment from "../StaticPayment/StaticPayment";
 import EmptyCheckOut from "../EmptyCheckOut/EmptyCheckOut";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export default function FormAboutPayment() {
+  const router =  useRouter()
   const [isLoading, setIsLoading] = useState(false);
   const {
     cartId,
@@ -82,6 +84,7 @@ export default function FormAboutPayment() {
         setCartId(res.cartId);
         setCartProduct([]);
         setTotalPrice(0);
+        router.push("/shop");
         console.log("res to order");
 
         toast.success("Order placed successfully! 🎉", {
@@ -123,7 +126,7 @@ export default function FormAboutPayment() {
     <>
       {cartProduct && cartProduct.length > 0 ? (
         <>
-          <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-8">
+          <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen p-8">
             <StaticPayment />
 
             <form onSubmit={handleSubmit(handelCheckOut)}>
