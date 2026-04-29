@@ -6,7 +6,6 @@ import ProductCart from "../AllProducts/productCart";
 import { ProductType } from "@/Types/product.types";
 import { Category } from "@/Types/category.type";
 import { getProductsByCategories } from "@/app/_actions/Product.action";
-import Loading from "../Loading/Loaging";
 
 interface Props {
   category: Category;
