@@ -5,6 +5,7 @@ import { BsBoxFill } from "react-icons/bs";
 import { FaLocationDot, FaReceipt, FaHashtag, FaClock, FaMoneyBill, FaTruck, FaCreditCard } from "react-icons/fa6";
 import { FaCalendarAlt, FaChevronDown, FaPhoneAlt } from "react-icons/fa";
 import { OrderType } from "@/Types/order.type";
+import Loading from "../Loading/Loading";
 
 interface Props {
   order: OrderType;
@@ -25,6 +26,9 @@ export default function OrderCard({ order }: Props) {
  const isDelivered = order.paymentMethodType === "card";
 
   return (
+    <>
+  {order ? <>
+  
     <div className="bg-white rounded-2xl border transition-all duration-300 overflow-hidden border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200">
       <div className="p-5 sm:p-6">
         <div className="flex gap-5">
@@ -219,5 +223,9 @@ export default function OrderCard({ order }: Props) {
         </>
       )}
     </div>
+  
+  </>: <Loading/>}
+    
+    </>
   );
 }

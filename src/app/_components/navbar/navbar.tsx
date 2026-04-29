@@ -209,7 +209,7 @@ export default  function Navbar({ categoriesDropdown } : NavbarProps) {
             {session.data ? (
               <Link
                 href="/profile"
-                className="w-10 h-10 flex items-center justify-center text-[#6A7282] hover:text-global hover:bg-gray-100 rounded-full  text-xl"
+                className="w-10 h-10 hidden lg:flex items-center justify-center text-[#6A7282] hover:text-global hover:bg-gray-100 rounded-full  text-xl"
               >
                 <FaRegCircleUser className="text-[22px]" />
               </Link>

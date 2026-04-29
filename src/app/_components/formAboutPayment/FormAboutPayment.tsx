@@ -88,7 +88,7 @@ export default function FormAboutPayment() {
         setTotalPrice(0);
         setNumberOfCardItem(0);
         setNumberOfWishlistItem(0);
-        router.push("/shop");
+        router.push("/allorders");
         console.log("res to order");
 
         toast.success("Order placed successfully! 🎉", {
