@@ -71,13 +71,13 @@ export default function Navbar({ categoriesDropdown }: NavbarProps) {
 
           {session.data ? (
             <>
-              {/* <Link
-                href="/profile"
+              <Link
+                href="/shop"
                 className="text-[#4A5565] text-sm hover:text-global flex gap-2 items-center"
               >
                 <BiUser />
-                medo
-              </Link> */}
+                user
+              </Link>
               <button
                 onClick={handleLogOut}
                 className="text-[#4A5565] text-sm hover:text-red-500 flex gap-2 items-center"
@@ -205,7 +205,7 @@ export default function Navbar({ categoriesDropdown }: NavbarProps) {
             {/* User / Sign In */}
             {session.data ? (
               <Link
-                href="/profile"
+                href="/shop"
                 className="w-10 h-10 hidden lg:flex items-center justify-center text-[#6A7282] hover:text-global hover:bg-gray-100 rounded-full  text-xl"
               >
                 <FaRegCircleUser className="text-[22px]" />

@@ -149,7 +149,7 @@
   cursor: pointer;
   transition: 0.3s;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .custom-prev,
   .custom-next {
     display: flex;

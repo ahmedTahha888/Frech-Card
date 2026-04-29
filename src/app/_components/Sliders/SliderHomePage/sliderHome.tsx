@@ -93,7 +93,7 @@ export default function SliderHome() {
                       initial={{ opacity: 0, y: 54 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.7, ease: "easeOut" }}
+                      transition={{ duration: 0.7, ease: "easeOut" , delay: 0.2}}
                       className="text-white text-3xl font-bold mb-4 max-w-96"
                     >
                       {slide.title}
@@ -102,7 +102,7 @@ export default function SliderHome() {
                       initial={{ opacity: 0, y: 54 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.7, ease: "easeOut" }}
+                      transition={{ duration: 0.7, ease: "easeOut" , delay: 0.3}}
                       className="text-white font-normal"
                     >
                       {slide.content}
@@ -111,7 +111,7 @@ export default function SliderHome() {
                       initial={{ opacity: 0, y: 54 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.7, ease: "easeOut" , delay: 0.2}}
+                        transition={{ duration: 0.7, ease: "easeOut" , delay: 0.4}}
                       className="flex gap-2.5 mt-4">
                       <button
                      
