@@ -254,10 +254,10 @@ export default function Navbar({ categoriesDropdown }: NavbarProps) {
                   <div className="relative">
                     <input
                       type="text"
-                      className="border-2 w-full py-2 px-5 rounded-full text-sm"
+                      className="border-2 w-full py-2.5 px-5 rounded-full text-sm"
                       placeholder="Search products..."
                     />
-                    <div className="h-9 w-9 bg-global rounded-full flex justify-center items-center absolute right-1 top-0">
+                    <div className="h-9 w-9 bg-global rounded-full flex justify-center items-center absolute right-1 top-0.5">
                       <IoSearchSharp className="text-white" />
                     </div>
                   </div>
@@ -283,7 +283,7 @@ export default function Navbar({ categoriesDropdown }: NavbarProps) {
                       Categories
                     </Link>
                     <Link
-                      href="/categories"
+                      href="/brands"
                       className="py-3 px-4 hover:bg-green-50 rounded-lg text-[#364153] hover:text-global font-medium transition-colors"
                     >
                       Brands
