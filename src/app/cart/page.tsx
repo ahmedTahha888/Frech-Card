@@ -109,7 +109,7 @@ export default function CardData() {
                   </h1>
                   <p className="text-gray-500 mt-4">
                     You have{" "}
-                    <span className="font-semibold text-global">1 item </span>in
+                    <span className="font-semibold text-global">{numberOfCardItem} item </span>in
                     your cart
                   </p>
                 </div>

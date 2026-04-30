@@ -129,7 +129,7 @@
 
 
 import { getAllCategory } from '@/app/_actions/Category.action'
-import CategoriesDropdownClient from '../CategoriesDropdownServer/CategoriesDropdownClient'
+import CategoriesDropdownClient from '../CategoriesDropdownClient/CategoriesDropdownClient'
 
 export default async function CategoriesDropdown() {
   const categories = await getAllCategory()

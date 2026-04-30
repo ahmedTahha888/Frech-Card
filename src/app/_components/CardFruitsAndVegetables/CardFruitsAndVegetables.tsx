@@ -8,7 +8,7 @@ export default function CardFruitsAndVegetables() {
   return (
     <section className="py-10 px-3">
       <div className="mx-5">
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 overflow-hidden">
           {/* Card Fruits */}
           <motion.div
           initial={{ opacity: 0, x: -54 }}
