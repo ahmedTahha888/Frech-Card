@@ -250,7 +250,7 @@ export default function FormAboutPayment() {
                                   aria-invalid={fieldState.invalid}
                                   placeholder="01xxxxxxxxx"
                                   autoComplete="off"
-                                  type="tell"
+                                  type="tel"
                                   className="w-full px-4 py-6 pl-14 border-2 rounded-xl focus:outline-none transition-all border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-100"
                                 />
                                 <p className="hidden md:block absolute right-4 top-5 text-xs text-gray-400 text-right">

@@ -23,15 +23,15 @@ export default async function page({ params }: { params: { id: string } })  {
                     <span className='text-white/40'> /</span>
                     <Link href='/brands' className='hover:text-white transition-colors'>Brands</Link>
                     <span className='text-white/40'> /</span>
-                    <span className='text-white font-medium'> {brand.image}</span>
+                    <span className='text-white font-medium'> {brand.name}</span>
                 </div>
                 <div className='flex items-center gap-5'>
                     <div className='w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-xl ring-1 ring-white/30'>
                         <Image src={brand.image} width={40} height={40} className='w-10 h-10 object-contain' alt={brand.name} />
                     </div>
                     <div>
-                        <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>Canon</h2>
-                        <p className='text-white/80 mt-1'>Shop Canon products</p>
+                        <h2 className='text-3xl sm:text-4xl font-bold tracking-tight'>{brand.name}</h2>
+                        <p className='text-white/80 mt-1'>Shop {brand.name}  products</p>
                     </div>
                 </div>
             </div>
